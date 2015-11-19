@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'lessons/index'
+
+  get 'lessons/edit'
+
+  get 'lessons/new'
+
+  get 'lessons/show'
+
   get 'search' => 'search#index'
 
 
