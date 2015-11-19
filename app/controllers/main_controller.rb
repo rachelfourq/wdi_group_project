@@ -1,14 +1,14 @@
-require 'restclient'
+require 'rest-client'
+
 class MainController < ApplicationController
 
   def index
-      response = Restclient.get "http://api-explorer.khanacademy.org/group/api/v1",
-	  headers:{
-	    "Accept" => "application/json"
-	  }
-	  # puts response.body.to_s
+response = RestClient.get 'http://www.khanacademy.org/api/v1/topic/math'
+    results = response.body.to_json
+    # render :json => response
+    @results = JSON.parse(response)["children"]
+    # [children][0]
 
-	  render :json => response
   end
 
 end
