@@ -1,16 +1,14 @@
-require 'unirest'
+require 'rest-client'
 
 class MainController < ApplicationController
 
   def index
-      response = Unirest.get "https://devru-instructables.p.mashape.com/list?limit=200&offset=0&sort=recent&type=id",
-	  headers:{
-	    "X-Mashape-Key" => "qNv5DeZglHmshdK7jNeqX3Y33WKpp1US0vpjsnLNyYfawqaTfR",
-	    "Accept" => "application/json"
-	  }
-	  # puts response.body.to_s
-	  @results = response.body.to_json
-	  # render :json => response
+response = RestClient.get 'http://www.khanacademy.org/api/v1/topic/math'
+    results = response.body.to_json
+    # render :json => response
+    @results = JSON.parse(response)["children"]
+    # [children][0]
+    
   end
 
 end
