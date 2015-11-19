@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  root 'main#index'
+  
+  get 'auth/logout' => 'auth#logout'
+  get 'auth/failure' => 'auth#failure'
+  get 'auth/:provider/callback' => 'auth#callback'
+  
   get 'lessons/index'
 
   get 'lessons/edit'
@@ -7,8 +13,8 @@ Rails.application.routes.draw do
 
   get 'lessons/show'
 
-  get 'search' => 'search#index'
 
+  get 'search' => 'search#index'
 
   # get 'main/index'
 
@@ -16,7 +22,6 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'main#index'
 
   resources :main
   # Example of regular route:
