@@ -1,2 +1,16 @@
 <h1>Lessons#index</h1>
 <p>Find me in app/views/lessons/index.html.erb</p>
+
+<% @results.each do |item| %>
+<div class="well">
+  <h1><%= item['description']  %></h1>
+  <iframe src="<%= item['download_urls']['mp4'] %>" width="400" height="200"></iframe>
+
+<%= link_to 'Pick Lesson', new_lesson_path, class: 'btn btn-success' %>
+
+</div>
+<% end %>
+
+
+
+
