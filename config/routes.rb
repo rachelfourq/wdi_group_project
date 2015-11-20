@@ -24,11 +24,8 @@ Rails.application.routes.draw do
 
   resources :main
   resources :lessons
-
   resources :profile
-
   resources :uploads
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

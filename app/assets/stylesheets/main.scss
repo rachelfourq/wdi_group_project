@@ -1,3 +1,70 @@
-// Place all the styles related to the main controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-image:url("http://xomisse.com/wp-content/uploads/2015/11/homeBG1.jpg");
+  font-family: 'Karla', Arial, sans-serif;
+  font-size: 100%;
+  line-height: 1.6;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
+}
+
+h1 {
+  font-size: 42px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none; }
+  a:hover {
+    color: ""; }
+
+.header-text {
+  font-family:"Montserrat", Arial, sans-serif;
+  font-size:40px;color:#FFFFFF;
+}
+
+.secondary-text {
+  font-family:"Karla", Arial, sans-serif;
+  font-size:20px;
+  color:#FFFFFF;
+}
+.container {
+  background-color: #000;
+  max-width:850px;
+  padding-top: 0px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 150px;
+  vertical-align: center;
+  text-align:center;
+  opacity: 0.7;
+  filter: alpha(opacity=80);
+  border-style: solid black;
+}
+
+.content input {
+  text-align:center;}
+
+.divider {
+  display: block;
+  margin: 5px auto;
+  width: 50%;
+  height: 1px;
+  border-top: rgba(0, 0, 0, 0.1) 1px solid;
+  border-bottom: rgba(255, 255, 255, 0.2) 1px solid; 
+}
+

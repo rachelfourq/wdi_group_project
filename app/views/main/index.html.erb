@@ -1,6 +1,12 @@
-<h1>Main#index</h1>
-<p>Find me in app/views/main/index.html.erb</p>
-
+<div class="container">
+	<div class="header-text">
+		<h1>Welcome to BrushUp</h1>
+		<h2>What would you like to learn today?</h2><br>
+	</div>
+		<div class="divider">
+	</div>
+	<div class="row">
+		<button href="#"> <span>Search</span></button>
 <!-- upload tag -->
 <%= form_for @upload do |f| %>
 	<p>
@@ -21,4 +27,3 @@
 	<%= cl_image_tag(upload.cloud_id, :width => 500) %>
 
 <% end %>
-
