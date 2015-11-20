@@ -42,7 +42,7 @@ gem 'cloudinary'
 # gems for omniAuth
 gem 'omniauth'
 gem 'omniauth-facebook'
-
+gem 'devise'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
