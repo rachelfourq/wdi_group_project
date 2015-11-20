@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'profile/index'
+
   get 'lessons/index'
 
   get 'lessons/edit'
@@ -20,6 +22,9 @@ Rails.application.routes.draw do
 
   resources :main
   resources :lessons
+
+  resources :profile
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

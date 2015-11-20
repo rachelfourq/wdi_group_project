@@ -4,14 +4,11 @@ class LessonsController < ApplicationController
   end
 
   def index
-  	 
   end
 
   def new
-
-    response = RestClient.get 'http://www.khanacademy.org/api/v1/topic/' + params[:query] + '/videos'
+  	response = RestClient.get 'http://www.khanacademy.org/api/v1/topic/' + params[:query] + '/videos'
     @results = JSON.parse(response)
-
   end
 
   def show
