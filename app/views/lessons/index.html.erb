@@ -1,6 +1,13 @@
 <h1>Lessons#index</h1>
 <p>Find me in app/views/lessons/index.html.erb</p>
 
+
+<%= form_tag(lessons_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :query, params[:query], placeholder: "Search Posts" %>
+<%= submit_tag "Search" %>
+<% end %>
+
+
 <% @results.each do |item| %>
 <div class="well">
   <h1><%= item['description']  %></h1>
