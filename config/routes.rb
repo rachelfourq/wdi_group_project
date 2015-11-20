@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'uploads/index'
+
   get 'profile/index'
 
   get 'lessons/index'
@@ -23,6 +25,7 @@ Rails.application.routes.draw do
   resources :main
   resources :lessons
   resources :profile
+  resources :uploads
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
