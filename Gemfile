@@ -29,6 +29,7 @@ gem 'restclient'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'trollop'
 
 
 gem 'materialize-sass'
@@ -42,6 +43,10 @@ gem 'cloudinary'
 # gems for omniAuth
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'devise'
+
+#gem for youtube
+gem 'google-api-client', '>0.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
