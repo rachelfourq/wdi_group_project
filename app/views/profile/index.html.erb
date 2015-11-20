@@ -1,2 +1,21 @@
 <h1>Profile#index</h1>
 <p>Find me in app/views/profile/index.html.erb</p>
+
+<!-- upload tag -->
+<%= form_for @upload do |f| %>
+	
+	<p>	
+		<%= f.file_field :picture %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
+
+<!-- display image -->
+<% @uploads.each do |upload| %>
+<div>
+	<h3><%= upload.title  %></h3>
+	<%= cl_image_tag(upload.cloud_id, :width => 500) %>
+
+<% end %>
