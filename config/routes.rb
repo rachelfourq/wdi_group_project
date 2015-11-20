@@ -26,6 +26,12 @@ Rails.application.routes.draw do
   resources :lessons
   resources :profile
   resources :uploads
+
+  #oAuth routes
+  get 'auth/logout' => 'auth#logout'
+  get 'auth/failure' => 'auth#failure'
+  get 'auth/:provider/callback' => 'auth#callback'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

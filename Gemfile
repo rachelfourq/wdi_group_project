@@ -39,6 +39,9 @@ gem "font-awesome-rails"
 
 gem 'cloudinary'
 
+# gems for omniAuth
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
