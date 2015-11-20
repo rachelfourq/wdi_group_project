@@ -1,21 +1,3 @@
 <h1>Main#index</h1>
 <p>Find me in app/views/main/index.html.erb</p>
 
-<%= link_to "Login with Facebook", "/auth/facebook", class: "btn btn-primary" %>
-
-<% if @current_user  %>
-  <%= link_to "Logout", auth_logout_path, class: 'btn btn-danger' %>
-<% end  %> 
-
-<div class="well">
-  Current User: 
-  <%= @current_user.inspect %>  
-</div>
-
-<% @results.each do |item| %>
-<div class="well">
-  <h1><%= item['description']  %></h1>
-  <iframe src="<%= item['download_urls']['mp4'] %>" width="400" height="200"></iframe>
-
-</div>
-<% end %>
