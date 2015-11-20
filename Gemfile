@@ -30,6 +30,10 @@ gem 'restclient'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'materialize-sass'
+
+gem 'foundation-rails'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

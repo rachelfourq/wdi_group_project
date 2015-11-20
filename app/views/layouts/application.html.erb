@@ -1,18 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WdiGroupProject</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <title>BrushUp</title>
+
+
+  <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.0/css/materialize.min.css">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <!-- Latest compiled and minified CSS & JS -->
-  <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <script src="//code.jquery.com/jquery.js"></script>
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<script src='//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js'></script>
+<script>
+	WebFont.load( {
+		google: {
+			families: ['Montserrat', 'Karla']
+		}
+	} );
+</script>
 </head>
 <body>
 
-<%= yield %>
 
+  <nav>
+    <div class="nav-wrapper black">
+      <a href="#" class="brand-logo">BrushUp Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Login</a></li>
+        <li><a href="badges.html">Signup</a></li>
+        <li><a href="collapsible.html">Test</a></li>
+      </ul>
+    </div>
+  </nav>
+        
+
+		<%= yield %>
+
+
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.0/js/materialize.min.js"></script>
+  		<script src="//code.jquery.com/jquery.js"></script>
+  		<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
 </html>

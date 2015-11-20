@@ -1,10 +1,6 @@
-<h1>Main#index</h1>
-<p>Find me in app/views/main/index.html.erb</p>
-
-<% @results.each do |item| %>
-<div class="well">
-  <h1><%= item['description']  %></h1>
-  <iframe src="<%= item['download_urls']['mp4'] %>" width="400" height="200"></iframe>
-
-</div>
-<% end %>
+<div class="container">
+	<div class="header-text">
+		<h1>Welcome!</h1>
+	</div>
+	<div class="row">
+		<button href="#" class="facebook button split"> <span></span>sign in with facebook</button>
