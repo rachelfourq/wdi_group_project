@@ -94,8 +94,6 @@ class LessonsController < ApplicationController
   def update
     c = Lesson.find params[:id]
     c.update lesson_params
-
-
     redirect_to lessons_path
   end
 

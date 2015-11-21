@@ -1,3 +1,24 @@
+<<<<<<< HEAD
+<% @results.each do |item| %>
+
+<div class="content">
+    <div class="row">
+      <div class="small-3 column">
+  		<h3><%= item['description']  %></h3>
+      </div>
+      <div class="small-9 column">
+  <iframe src="<%= item['download_urls']['mp4'] %>" width="400" height="200"></iframe>
+      </div>
+    </div>
+</div>
+
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>
+
+
+
+=======
 <h1>Lessons#new</h1>
 <p>Find me in app/views/lessons/new.html.erb</p>
 
@@ -5,5 +26,6 @@
 <% @response.each do |item| %>
 <div class="well">
   <%= item[title] %>
+>>>>>>> d4c0ded521b4de7b28b86981ccb6f718a901851f
 </div>
 <% end %>
