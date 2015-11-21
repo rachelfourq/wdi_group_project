@@ -3,8 +3,21 @@
 
 
 <%= link_to 'Back Home', lessons_path, class: 'btn' %>
-
+<html>
+  <body>
+    <div class="row">
+      <div class="small-8 column">
+        <ul class="small-block-grid-3">
+          <li><h2><%= @lesson.title %></h2>
+  			<p><%= @lesson.description %></p></li>
+        </ul>
+      </div>
+      <div class="small-4 column">
+        <!-- amazing sidebar content -->
+      </div>
+    </div>
+  </body>
+</html>
 <div class="well">
-  <h2><%= @lesson.title %></h2>
-  <p><%= @lesson.description %></p>
+  
 </div>
