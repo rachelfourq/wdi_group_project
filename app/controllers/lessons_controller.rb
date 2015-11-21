@@ -27,8 +27,10 @@ class LessonsController < ApplicationController
 # tab of
 # Google Developers Console <https://console.developers.google.com/>
 # Please ensure that you have enabled the YouTube Data API for your project.
-
+  
   def get_service
+
+
     client = Google::APIClient.new(
       :key => 'AIzaSyCBVLwiFk4QtMKhRGVPqjw7zbc4aroxx6g',
       :authorization => nil,
@@ -40,9 +42,11 @@ class LessonsController < ApplicationController
     return client, youtube
   end
 
+  qString = ' khan academy' + params[:query].to_s 
+
   opts = Trollop::options do
-    opt :q, 'Search term', :type => String, :default => 'history khanacademy'
-    opt :max_results, 'Max results', :type => :int, :default => 25
+    opt :q, qString, :type => String, :default => qString
+    opt :max_results, 'Max results', :type => :int, :default => 10
   end
 
   client, youtube = get_service
@@ -76,7 +80,7 @@ class LessonsController < ApplicationController
         end
       end
 
-      response =  videos
+      @response =  videos
       # puts "Channels:\n", channels, "\n"
       # puts "Playlists:\n", playlists, "\n"
     rescue Google::APIClient::TransmissionError => e
@@ -84,7 +88,7 @@ class LessonsController < ApplicationController
     end
 
 
-  render json: response
+  # render json: response
   end
 
   def show
