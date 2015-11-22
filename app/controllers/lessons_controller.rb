@@ -32,7 +32,7 @@ class LessonsController < ApplicationController
 
 
     client = Google::APIClient.new(
-      :key => 'AIzaSyCBVLwiFk4QtMKhRGVPqjw7zbc4aroxx6g',
+      :key => ENV['YOUTUBE_KEY'],
       :authorization => nil,
       :application_name => $BrushUp,
       :application_version => '1.0.0'
