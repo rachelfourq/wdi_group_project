@@ -67,19 +67,17 @@ class LessonsController < ApplicationController
       videos = []
       channels = []
       playlists = []
-      titles = []
+      # titles = []
 
       # Add each result to the appropriate list, and then display the lists of
       # matching videos, channels, and playlists.
       search_response.data.items.each do |search_result|
         case search_result.id.kind
           when 'youtube#video'
-            titles << "#{search_result.snippet.title}"
-            videos << "#{search_result.id.videoId}"
-          when 'youtube#channel'
-            channels << "#{search_result.snippet.title} (#{search_result.id.channelId})"
-          when 'youtube#playlist'
-            playlists << "#{search_result.snippet.title} (#{search_result.id.playlistId})"
+            # titles << "#{search_result.snippet.title}"
+            # videos << "#{search_result.id.videoId}"
+            videoObject = VideoInfo.new("http://www.youtube.com/watch?v=" + "#{search_result.id.videoId}")
+            videos << videoObject
         end
       end
 
