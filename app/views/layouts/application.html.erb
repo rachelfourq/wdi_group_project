@@ -29,7 +29,16 @@
 <body>
 
 
-  <nav>
+
+
+<script>
+$(document).ready(function(){
+  $('select').material_select();
+  $('.modal-trigger').leanModal();
+});
+</script>
+
+<!--   <nav>
     <div class="nav-wrapper black">
       <a href="#" class="brand-logo">BrushUp</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -39,7 +48,7 @@
         <li><a href="http://www.github.com"><i class="fa fa-github"></i></a></li>
       </ul>
     </div>
-  </nav>
+  </nav> -->
         
 
 		<%= yield %>
