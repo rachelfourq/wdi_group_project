@@ -6,7 +6,7 @@
 
 <%= link_to "Login with Facebook", "/auth/facebook", class: "btn btn-primary" %>
 
-<%= form_tag(new_lesson_path, :method => "get", :url => "new_lessons_path", id: "search-form") do %>
+<%= form_tag(lessons_path, :method => "get", :url => "lessons_path", id: "search-form") do %>
 Search Posts<%= text_field_tag :query %>
 <%= submit_tag "Search" %>
 <% end %>

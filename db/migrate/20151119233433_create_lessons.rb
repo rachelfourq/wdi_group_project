@@ -3,7 +3,6 @@ class CreateLessons < ActiveRecord::Migration
     create_table :lessons do |t|
       t.references :user, index: true, foreign_key: true
       t.string :video_id
-
       t.timestamps null: false
     end
   end

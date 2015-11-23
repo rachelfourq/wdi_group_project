@@ -1,22 +1,3 @@
 
 <h1>Lessons#new</h1>
 <p>Find me in app/views/lessons/new.html.erb</p>
-
-
-<%  @response.each do |video| %>
-<div class="container">
-  <h3><%= video.title %></h3> 
-  <img src="<%= video.thumbnail_medium %>"/>
-  <br />
-  <p><%= link_to '+ Add Lesson', profile_index_path, class: 'btn btn-primary', id: 'add_btn' %></p>
-</div>
-
-<% end  %>
-
-<%  @anotherResponse.each do |video| %>
-<div class="container">
-  <h3><%= video.title %></h3>
-  <img src="<%= video.thumbnail_medium %>"/>
-</div>  
-<% end  %>
-

@@ -1,5 +1,21 @@
 <h1>Lessons#index</h1>
 <p>Find me in app/views/lessons/index.html.erb</p>
 
+<%  @response.each do |video| %>
+<div class="container">
+  <h3><%= video.title %></h3> 
+  <img src="<%= video.thumbnail_medium %>"/>
+  <br />
 
 
+  <p>
+    <%= form_for @lesson, new_lesson_path, class: 'btn btn-primary' do |f| %>
+      <%= f.video_id :video_id %>
+    <% end %>
+ </p>
+
+
+  <p><%= link_to '+ Preview', lessons_path, class: 'btn btn-primary', id: 'add_btn' %></p>
+</div>
+
+<% end  %>
