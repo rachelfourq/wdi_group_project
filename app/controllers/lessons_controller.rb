@@ -80,8 +80,9 @@ class LessonsController < ApplicationController
 
   def new
     lesson = Lesson.new
-    lesson.video_id = :video_id
-    # redirect back to page
+    lesson.video_id = params[:video][:id]
+    lesson.save
+    
   end
 
   def show

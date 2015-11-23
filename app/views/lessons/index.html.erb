@@ -7,13 +7,12 @@
   <img src="<%= video.thumbnail_medium %>"/>
   <br />
 
-
   <p>
-    <%= form_for @lesson, new_lesson_path, class: 'btn btn-primary' do |f| %>
-      <%= f.video_id :video_id %>
+    <%= form_for :video, :url => {:action => "new"}, :html => {:method => "GET"} do |f| %>
+      <%= f.hidden_field :id, :value => video.video_id %>
+      <%= f.submit %>
     <% end %>
- </p>
-
+  </p>
 
   <p><%= link_to '+ Preview', lessons_path, class: 'btn btn-primary', id: 'add_btn' %></p>
 </div>
