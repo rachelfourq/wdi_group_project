@@ -4,16 +4,19 @@
 
 
 <%  @response.each do |video| %>
-
-<h1><%= video.title %></h1>
-<iframe src="<%= video.embed_url %>"></iframe>
+<div class="container">
+  <h3><%= video.title %></h3> 
+  <img src="<%= video.thumbnail_medium %>"/>
+  <br />
+  <p><%= link_to '+ Add Lesson', profile_index_path, class: 'btn btn-primary', id: 'add_btn' %></p>
+</div>
 
 <% end  %>
 
 <%  @anotherResponse.each do |video| %>
-
-<h1><%= video.title %></h1>
-<iframe src="<%= video.embed_url %>"></iframe>
-
+<div class="container">
+  <h3><%= video.title %></h3>
+  <img src="<%= video.thumbnail_medium %>"/>
+</div>  
 <% end  %>
 
