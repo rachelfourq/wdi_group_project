@@ -32,7 +32,7 @@ class LessonsController < ApplicationController
     end
 
     qString = ' khan academy'  + params[:query].to_s 
-    qString2 = 'coursera ' + params[:query].to_s
+    qString2 = ' coursera ' + params[:query].to_s
 
     def searchFunction(qString)
 
