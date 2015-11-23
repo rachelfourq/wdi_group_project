@@ -29,8 +29,6 @@
 <body>
 
 
-
-
 <script>
 $(document).ready(function(){
   $('select').material_select();
@@ -38,20 +36,11 @@ $(document).ready(function(){
 });
 </script>
 
-<!--   <nav>
-    <div class="nav-wrapper black">
-      <a href="#" class="brand-logo">BrushUp</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Signup</a></li>
-        <li><%=link_to "Profile", profile_index_path %></li>
-        <li><a href="http://www.github.com"><i class="fa fa-github"></i></a></li>
-      </ul>
-    </div>
-  </nav> -->
         
 
 		<%= yield %>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/0.1.11/slideout.min.js"></script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="/assets/fresco.js"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.0/js/materialize.min.js"></script>
