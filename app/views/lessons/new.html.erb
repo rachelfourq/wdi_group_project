@@ -10,3 +10,10 @@
 
 <% end  %>
 
+<%  @anotherResponse.each do |video| %>
+
+<h1><%= video.title %></h1>
+<iframe src="<%= video.embed_url %>"></iframe>
+
+<% end  %>
+
