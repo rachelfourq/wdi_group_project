@@ -9,54 +9,41 @@ class LessonsController < ApplicationController
   end
 
   def index
-  end
+    # for database purposes
+    @lesson = Lesson.new
 
-  def new
-  	# response = RestClient.get 'http://www.khanacademy.org/api/v1/topic/' + params[:query] + '/videos'
-   #  @results = JSON.parse(response)
+    require 'rubygems'
+    gem 'google-api-client', '>0.7'
+    require 'google/api_client'
+    require 'trollop'
 
-   #!/usr/bin/ruby
-
-  require 'rubygems'
-  gem 'google-api-client', '>0.7'
-  require 'google/api_client'
-  require 'trollop'
-
-  
-# Set DEVELOPER_KEY to the API key value from the APIs & auth > Credentials
-# tab of
-# Google Developers Console <https://console.developers.google.com/>
-# Please ensure that you have enabled the YouTube Data API for your project.
-  
-  def get_service
+    def get_service
 
 
-    client = Google::APIClient.new(
-      :key => ENV['YOUTUBE_KEY'],
-      :authorization => nil,
-      :application_name => $BrushUp,
-      :application_version => '1.0.0'
-    )
-    youtube = client.discovered_api('youtube', 'v3')
+      client = Google::APIClient.new(
+        :key => ENV['YOUTUBE_KEY'],
+        :authorization => nil,
+        :application_name => $BrushUp,
+        :application_version => '1.0.0'
+      )
+      youtube = client.discovered_api('youtube', 'v3')
 
-    return client, youtube
-  end
-
-  qString = ' khan academy'  + params[:query].to_s 
-  qString2 = 'coursera ' + params[:query].to_s
-
-   def searchFunction(qString)
-
-    opts = Trollop::options do
-      opt :q, 'Search Term', :type => String, :default => qString
-      opt :max_results, 'Max results', :type => :int, :default => 6
+      return client, youtube
     end
 
-    client, youtube = get_service
+    qString = ' khan academy'  + params[:query].to_s 
+    qString2 = 'coursera ' + params[:query].to_s
+
+    def searchFunction(qString)
+
+      opts = Trollop::options do
+        opt :q, 'Search Term', :type => String, :default => qString
+        opt :max_results, 'Max results', :type => :int, :default => 6
+      end
+      client, youtube = get_service
 
       begin
-        # Call the search.list method to retrieve results matching the specified
-        # query term.
+
         search_response = client.execute!(
           :api_method => youtube.search.list,
           :parameters => {
@@ -69,10 +56,7 @@ class LessonsController < ApplicationController
         videos = []
         channels = []
         playlists = []
-        # titles = []
-
-        # Add each result to the appropriate list, and then display the lists of
-        # matching videos, channels, and playlists.
+        
         search_response.data.items.each do |search_result|
           case search_result.id.kind
             when 'youtube#video'
@@ -83,21 +67,21 @@ class LessonsController < ApplicationController
           end
         end
 
-
-    
-      return videos
-      
-   
-      # puts "Channels:\n", channels, "\n"
-      # puts "Playlists:\n", playlists, "\n"
-    rescue Google::APIClient::TransmissionError => e
-      puts e.result.body
+        return videos
+        
+      rescue Google::APIClient::TransmissionError => e
+        puts e.result.body
+      end
     end
+
+    @response = searchFunction(qString)
+    # @anotherResponse = searchFunction(qString2)
   end
 
-  @response = searchFunction(qString)
-  @anotherResponse = searchFunction(qString2)
-  # render json: response
+  def new
+    lesson = Lesson.new
+    lesson.video_id = :video_id
+    # redirect back to page
   end
 
   def show
