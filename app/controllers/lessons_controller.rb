@@ -2,7 +2,7 @@ require 'google/api_client'
 require 'trollop'
 
 class LessonsController < ApplicationController
-
+  before_action :current_user
 
   def edit
   	@lesson = Lesson.find params[:id]
@@ -81,8 +81,8 @@ class LessonsController < ApplicationController
   def new
     lesson = Lesson.new
     lesson.video_id = params[:video][:id]
+    lesson.user_id = params[:video][:user_id]
     lesson.save
-    
   end
 
   def show
