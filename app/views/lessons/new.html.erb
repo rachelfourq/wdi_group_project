@@ -3,13 +3,10 @@
 <p>Find me in app/views/lessons/new.html.erb</p>
 
 
-<%  @response.each do |item| %>
+<%  @response.each do |video| %>
 
-
-<img src='https://img.youtube.com/vi/<%= item %>/0.jpg' width='200' height='200'>
-<p> 
-
-<iframe src='https://www.youtube.com/embed/<%= item %>' width="400" height="200"></iframe>
+<h1><%= video.title %></h1>
+<iframe src="<%= video.embed_url %>"></iframe>
 
 <% end  %>
 
