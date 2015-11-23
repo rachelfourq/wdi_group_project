@@ -1,7 +1,7 @@
 <h1>Lessons#index</h1>
 <p>Find me in app/views/lessons/index.html.erb</p>
 
-  Current User: <%= @current_user.inspect %>
+<%= @current_user.name %>
 
 <%  @response.each do |video| %>
 <div class="container">
@@ -12,7 +12,7 @@
   <p>
     <%= form_for :video, :url => {:action => "new"}, :html => {:method => "GET"} do |f| %>
       <%= f.hidden_field :id, :value => video.video_id %>
-      <%= f.hidden_field :user_id, :value => @current_user %>
+      <%= f.hidden_field :user_id, :value => @current_user.id %>
       <%= f.submit %>
     <% end %>
   </p>
