@@ -2,7 +2,14 @@
 <h1>Lessons#new</h1>
 <p>Find me in app/views/lessons/new.html.erb</p>
 
+
 <%  @response.each do |item| %>
+
+
+<img src='https://img.youtube.com/vi/<%= item %>/0.jpg' width='200' height='200'>
+<p> 
+
 <iframe src='https://www.youtube.com/embed/<%= item %>' width="400" height="200"></iframe>
+
 <% end  %>
 

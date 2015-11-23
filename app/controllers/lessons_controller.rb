@@ -42,11 +42,12 @@ class LessonsController < ApplicationController
     return client, youtube
   end
 
-  qString = ' khan academy' + params[:query].to_s 
+  qString = ' khan academy'  + params[:query].to_s 
+
 
   opts = Trollop::options do
-    opt :q, qString, :type => String, :default => qString
-    opt :max_results, 'Max results', :type => :int, :default => 10
+    opt :q, 'Search Term', :type => String, :default => qString
+    opt :max_results, 'Max results', :type => :int, :default => 6
   end
 
   client, youtube = get_service
@@ -66,12 +67,14 @@ class LessonsController < ApplicationController
       videos = []
       channels = []
       playlists = []
+      titles = []
 
       # Add each result to the appropriate list, and then display the lists of
       # matching videos, channels, and playlists.
       search_response.data.items.each do |search_result|
         case search_result.id.kind
           when 'youtube#video'
+            titles << "#{search_result.snippet.title}"
             videos << "#{search_result.id.videoId}"
           when 'youtube#channel'
             channels << "#{search_result.snippet.title} (#{search_result.id.channelId})"
@@ -80,7 +83,10 @@ class LessonsController < ApplicationController
         end
       end
 
-      @response =  videos
+    
+      @response = videos
+      
+   
       # puts "Channels:\n", channels, "\n"
       # puts "Playlists:\n", playlists, "\n"
     rescue Google::APIClient::TransmissionError => e

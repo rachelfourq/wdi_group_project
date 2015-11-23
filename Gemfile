@@ -48,6 +48,8 @@ gem 'devise'
 #gem for youtube
 gem 'google-api-client', '>0.7'
 
+gem 'video_info'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
