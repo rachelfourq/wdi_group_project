@@ -1,7 +1,38 @@
-<h1>Profile#index</h1>
-<p>Find me in app/views/profile/index.html.erb</p>
+<div class="row">
+<div class="col l3">
+    <ul id="slide-out" class="side-nav fixed">
+    <div class="row">
+    <h3>BrushUp</h3>
+      <li>
+ 
+        <a class="waves-effect white modal-trigger grey-text" href="#modal1">Update Profile Picture</a>
+      </li> 
+      </div>
 
+      <div class="row"> 
+      <% @uploads.each do |upload| %>
+  <div>
+  <h3><%= upload.title  %></h3>
+  <%= cl_image_tag(upload.cloud_id, :width => 200, :height => 200, :crop =>'thumb') %>
 
+  <% end %>  
 
+      <li><h6><i class="fa fa-user"></i> <%= @current_user.name %></h6></li>
+      <li><i class="fa fa-globe"></i> </li>
+      <li><textarea></textarea></li>
+      </div>
+      <!-- need to add a modal here -->
+    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+</div> 
 
-
+<!-- modal not working -->
+<%= form_for @upload do |f| %>
+  
+  <p> 
+    <%= f.file_field :picture %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
