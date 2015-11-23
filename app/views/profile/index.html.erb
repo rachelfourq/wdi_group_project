@@ -1,38 +1,15 @@
-<div class="row">
-<div class="col l3">
-    <ul id="slide-out" class="side-nav fixed">
-    <div class="row">
-    <h3>BrushUp</h3>
-      <li>
- 
-        <a class="waves-effect white modal-trigger grey-text" href="#modal1">Update Profile Picture</a>
-      </li> 
-      </div>
+<%  @response.each do |video| %>
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+    <img src="<%= video.thumbnail_medium %>"/>
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4"><%= video.title %></span>
+      <p><a href="#">This is a link</a></p>
+    </div>
+    <div>
+      <%= link_to 'delete', profile_path(video.video_id), :action => 'destroy', class: 'btn btn-danger', method: :delete %>
+    </div>
 
-      <div class="row"> 
-      <% @uploads.each do |upload| %>
-  <div>
-  <h3><%= upload.title  %></h3>
-  <%= cl_image_tag(upload.cloud_id, :width => 200, :height => 200, :crop =>'thumb') %>
-
-  <% end %>  
-
-      <li><h6><i class="fa fa-user"></i> <%= @current_user.name %></h6></li>
-      <li><i class="fa fa-globe"></i> </li>
-      <li><textarea></textarea></li>
-      </div>
-      <!-- need to add a modal here -->
-    </ul>
-    <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-</div> 
-
-<!-- modal not working -->
-<%= form_for @upload do |f| %>
-  
-  <p> 
-    <%= f.file_field :picture %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
+  </div>
 <% end %>
