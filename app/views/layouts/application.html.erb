@@ -42,9 +42,11 @@
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
             <li>
+            <div class='profilePic'>
             <% if @current_user %>
                 <%= cl_image_tag(@current_user.cloud_id, :width => 200, :height => 200, :crop =>'thumb') %>
                 <% end %>
+                </div>
             </li>
 
             <li>
@@ -72,16 +74,7 @@
               <% end %>
             </li>
             <li>
-                </i></span>Events</a>
-            </li>
-            <li>
                 <a href="/about"><span class="fa-stack fa-lg pull-left"><i class="fa fa-youtube-play fa-stack-1x "></i></span>About</a>
-            </li>
-            <li>
-                <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>Services</a>
-            </li>
-            <li>
-                <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-server fa-stack-1x "></i></span>Contact</a>
             </li>
             <li>
               <% if @current_user %>
