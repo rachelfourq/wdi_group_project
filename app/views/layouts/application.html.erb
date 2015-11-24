@@ -29,12 +29,78 @@
 <body>
 
 
-<script>
-$(document).ready(function(){
-  $('select').material_select();
-  $('.modal-trigger').leanModal();
-});
-</script>
+ 
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active" ><button class="navbar-toggle collapse in" data-toggle="collapse" id="menu-toggle-2"> <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span></button></li>
+            </ul>
+</div>
+   
+<div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
+            <li>
+                <% @uploads.each do |upload| %>
+                <h3><%= upload.title  %></h3>
+                <%= cl_image_tag(upload.cloud_id, :width => 200, :height => 200, :crop =>'thumb') %>
+                <% end %> 
+            </li>
+
+            <li>
+                <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span> <%= @current_user.name  %></a>
+                   <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+                    <li><a href="/profile">Profile</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-cloud-download fa-stack-1x "></i></span>Upload Profile Picture</a>
+                   <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+                    <li><%= form_for @upload do |f| %>
+                          <p> 
+                            <%= f.file_field :picture %>
+                          </p>
+                          <p>
+                            <%= f.submit %>
+                          </p>
+                        <% end %>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span> Shortcut</a>
+                <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+                    <li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link1</a></li>
+                    <li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link2</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="#"> <span class="fa-stack fa-lg pull-left"><i class="fa fa-cart-plus fa-stack-1x "></i></span>Events</a>
+            </li>
+            <li>
+                <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-youtube-play fa-stack-1x "></i></span>About</a>
+            </li>
+            <li>
+                <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>Services</a>
+            </li>
+            <li>
+                <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-server fa-stack-1x "></i></span>Contact</a>
+            </li>
+        </ul>
+    </div><!-- /#sidebar-wrapper -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
         
 
