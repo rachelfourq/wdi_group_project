@@ -41,10 +41,9 @@
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
             <li>
-                <% @uploads.each do |upload| %>
-                <h3><%= upload.title  %></h3>
-                <%= cl_image_tag(upload.cloud_id, :width => 200, :height => 200, :crop =>'thumb') %>
-                <% end %> 
+            <% if @uploads %>
+                <%= cl_image_tag(@uploads.cloud_id, :width => 200, :height => 200, :crop =>'thumb') %>
+                <% end %>
             </li>
 
             <li>
@@ -70,14 +69,6 @@
                     </li>
                 </ul>
               <% end %>
-            </li>
-            <li>
-                <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span> Shortcut</a>
-                <ul class="nav-pills nav-stacked" style="list-style-type:none;">
-                    <li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link1</a></li>
-                    <li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link2</a></li>
-
-                </ul>
             </li>
             <li>
                 </i></span>Events</a>
