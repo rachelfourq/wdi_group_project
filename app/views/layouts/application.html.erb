@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>BrushUp</title>
+
+   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="/assets/fresco.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.0/css/materialize.min.css">
   <title>BrushUp</title> 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.0/css/materialize.min.css">
@@ -15,10 +23,14 @@
 
 
   <%= csrf_meta_tags %>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/0.1.11/slideout.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/assets/modal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.0/js/materialize.min.js"></script>
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<script src='//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js'></script>
+  <script src='//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js'></script>
 <script>
 	WebFont.load( {
 		google: {
@@ -26,10 +38,13 @@
 		}
 	} );
 </script>
-</head>
-<body>
 
-
+<script>
+$(document).ready(function(){
+  $('select').material_select();
+  $('.modal-trigger').leanModal();
+});
+</script>
  
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
@@ -74,6 +89,18 @@
               <% end %>
             </li>
             <li>
+
+                <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span> Shortcut</a>
+                <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+                    <li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link1</a></li>
+                    <li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link2</a></li>
+                </ul>
+            </li>
+            <li>
+                </i></span>Events</a>
+            </li>
+            <li>
+                <a href="about"><span class="fa-stack fa-lg pull-left"><i class="fa fa-youtube-play fa-stack-1x "></i></span>About</a>
                 <a href="/about"><span class="fa-stack fa-lg pull-left"><i class="fa fa-youtube-play fa-stack-1x "></i></span>About</a>
             </li>
             <li>
@@ -88,6 +115,10 @@
       
 		<%= yield %>
 
-
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/assets/fresco.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.0/js/materialize.min.js"></script>
+  	<script src="//code.jquery.com/jquery.js"></script>
+  	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
 </html>
