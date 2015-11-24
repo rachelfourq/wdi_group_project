@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'friendships/create'
+
+  get 'friendships/destroy'
+
   root 'main#index'
   
   get 'uploads/index'
