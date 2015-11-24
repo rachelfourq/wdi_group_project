@@ -1,9 +1,8 @@
 body {
   background-image:url("/assets/rachel_pageflip.gif");
   font-family: 'Karla', Arial, sans-serif;
-  color: white;
+  color: #fff;
   font-size: 100%;
-  line-height: 1.0;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
@@ -22,7 +21,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 32px;
 }
 
 h2 {
@@ -65,7 +64,7 @@ a {
 
 .m_container {
   background-color: #000;
-  max-width:300px;
+  max-width:400px;
   max-height:750px;
   padding-top: 0px;
   margin-left: 250px;
@@ -80,6 +79,10 @@ a {
   filter: alpha(opacity=40);
 }
 
+#aboutpic {
+  height: 175px;
+}
+
 .content input {
   text-align:center;}
 
@@ -91,4 +94,3 @@ a {
   border-top: rgba(0, 0, 0, 0.1) 1px solid;
   border-bottom: rgba(255, 255, 255, 0.2) 1px solid; 
 }
-
