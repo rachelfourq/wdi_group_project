@@ -34,45 +34,7 @@ class LessonsController < ApplicationController
     qString = ' khan academy'  + params[:query].to_s 
     qString2 = ' coursera ' + params[:query].to_s
 
-    def searchFunction(qString)
-
-      opts = Trollop::options do
-        opt :q, 'Search Term', :type => String, :default => qString
-        opt :max_results, 'Max results', :type => :int, :default => 6
-      end
-      client, youtube = get_service
-
-      begin
-
-        search_response = client.execute!(
-          :api_method => youtube.search.list,
-          :parameters => {
-            :part => 'snippet',
-            :q => opts[:q],
-            :maxResults => opts[:max_results]
-          }
-        )
-
-        videos = []
-        channels = []
-        playlists = []
-        
-        search_response.data.items.each do |search_result|
-          case search_result.id.kind
-            when 'youtube#video'
-              # titles << "#{search_result.snippet.title}"
-              # videos << "#{search_result.id.videoId}"
-              videoObject = VideoInfo.new("http://www.youtube.com/watch?v=" + "#{search_result.id.videoId}")
-              videos << videoObject
-          end
-        end
-
-        return videos
-        
-      rescue Google::APIClient::TransmissionError => e
-        puts e.result.body
-      end
-    end
+    
 
     @response = searchFunction(qString)
     # @anotherResponse = searchFunction(qString2)
@@ -110,6 +72,42 @@ class LessonsController < ApplicationController
 
   def lesson_params
     params.require(:lesson).permit(:title, :description)
+  end
+
+  def searchFunction(qString)
+    client, youtube = get_service
+
+    begin
+      search_response = client.execute!(
+        :api_method => youtube.search.list,
+        :parameters => {
+          :part => 'snippet',
+          :q => qString,
+          :maxResults => 6
+        }
+      )
+
+      videos = []
+      channels = []
+      playlists = []
+      
+      search_response.data.items.each do |search_result|
+        case search_result.id.kind
+          when 'youtube#video'
+            # titles << "#{search_result.snippet.title}"
+            # videos << "#{search_result.id.videoId}"
+            videoObject = VideoInfo.new("http://www.youtube.com/watch?v=" + "#{search_result.id.videoId}")
+            videos << videoObject
+        end
+      end
+
+      return videos
+      
+    rescue Google::APIClient::TransmissionError => e
+      puts "*****************"
+      puts e.result.body
+      puts "*****************"
+    end
   end
 end
 
