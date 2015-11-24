@@ -75,13 +75,6 @@ class LessonsController < ApplicationController
   end
 
   def searchFunction(qString)
-    puts "******************"
-    puts qString
-    puts "******************"
-    opts = Trollop::options do
-      opt :q, 'Search Term', :type => String, :default => qString
-      opt :max_results, 'Max results', :type => :int, :default => 6
-    end
     client, youtube = get_service
 
     begin
@@ -89,8 +82,8 @@ class LessonsController < ApplicationController
         :api_method => youtube.search.list,
         :parameters => {
           :part => 'snippet',
-          :q => opts[:q],
-          :maxResults => opts[:max_results]
+          :q => qString,
+          :maxResults => 6
         }
       )
 
