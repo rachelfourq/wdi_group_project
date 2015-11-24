@@ -41,10 +41,11 @@ class LessonsController < ApplicationController
   end
 
   def new
-    lesson = Lesson.new
+    lesson = Lesson.find_or_create_by(video_id: params[:video][:id])
     lesson.video_id = params[:video][:id]
     lesson.user_id = params[:video][:user_id]
     lesson.save
+    redirect_to lessons_path
   end
 
   def show
@@ -104,9 +105,6 @@ class LessonsController < ApplicationController
       return videos
       
     rescue Google::APIClient::TransmissionError => e
-      puts "*****************"
-      puts e.result.body
-      puts "*****************"
     end
   end
 end

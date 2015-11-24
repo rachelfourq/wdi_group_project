@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20151124174739) do
     t.string   "provider_hash"
     t.string   "email"
     t.string   "name"
+    t.string   "cloud_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
