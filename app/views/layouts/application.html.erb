@@ -48,12 +48,15 @@
             </li>
 
             <li>
+              <% if @current_user %>
                 <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span> <%= @current_user.name  %></a>
                    <ul class="nav-pills nav-stacked" style="list-style-type:none;">
                     <li><a href="/profile">Profile</a></li>
                 </ul>
+              <% end %>
             </li>
             <li>
+              <% if @current_user %>
                 <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-cloud-download fa-stack-1x "></i></span>Upload Profile Picture</a>
                    <ul class="nav-pills nav-stacked" style="list-style-type:none;">
                     <li><%= form_for @upload do |f| %>
@@ -66,6 +69,7 @@
                         <% end %>
                     </li>
                 </ul>
+              <% end %>
             </li>
             <li>
                 <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span> Shortcut</a>
@@ -86,6 +90,11 @@
             </li>
             <li>
                 <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-server fa-stack-1x "></i></span>Contact</a>
+            </li>
+            <li>
+              <% if @current_user %>
+                <a href="/auth/logout"><span class="fa-stack fa-lg pull-left"><i class="fa fa-server fa-stack-1x "></i></span>Logout</a>
+              <% end %>
             </li>
         </ul>
     </div><!-- /#sidebar-wrapper -->
