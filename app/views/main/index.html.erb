@@ -1,11 +1,14 @@
-<div class="container">
-	<div class="header-text">
-		<h1>Welcome to BrushUp</h1>
-		<!-- <a href="/assets/test.jpg" class="fresco">Fresco jQuery Test</a> -->
-		<h2>What would you like to learn today?</h2><br>
-	</div>
+<div class="m_container">
+  <div class="header-text">
+    <img src="/assets/brushup_logo1.png" width="250px">
 
-<%= link_to "Login with Facebook", "/auth/facebook", class: "btn btn-primary" %>
+    <!-- <a href="/assets/test.jpg" class="fresco">Fresco jQuery Test</a> -->
+    <h2>What would you like to learn today?</h2><br>
+  </div>
+ 
+  <% if @current_user === nil%>
+    <%= link_to "Login with Facebook", "/auth/facebook", class: "btn btn-primary" %>
+  <% end %>
 
 <%= form_tag(lessons_path, :method => "get", :url => "lessons_path", id: "search-form") do %><%= text_field_tag :query %>
 <%= submit_tag "Search", class: 'btn btn-primary' %>

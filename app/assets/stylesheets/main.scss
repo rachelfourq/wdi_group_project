@@ -1,9 +1,8 @@
 body {
-  background-image:url("http://foxarc.com/c-blog/wp-content/uploads/2014/12/Watercolor-Background-Sky-Over-Meadow.jpg");
+  background-image:url("/assets/rachel_pageflip.gif");
   font-family: 'Karla', Arial, sans-serif;
-  color: white;
+  color: #fff;
   font-size: 100%;
-  line-height: 1.6;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
@@ -11,7 +10,10 @@ body {
   -moz-background-size: cover;
   background-size: cover;
 }
+
+
 h1, h2, h3, h4, h5, h6 {
+  color: white;
   font-weight: bold;
   -webkit-hyphens: auto;
      -moz-hyphens: auto;
@@ -20,7 +22,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 32px;
 }
 
 h2 {
@@ -61,6 +63,27 @@ a {
   padding: 10px;
 }
 
+.m_container {
+  background-color: #000;
+  max-width:400px;
+  max-height:750px;
+  padding-top: 0px;
+  margin-left: 250px;
+  float:left;
+  width:33%;
+  margin-top: 0px;
+  vertical-align: center;
+  text-align:center;
+  border-style: 10px solid black;
+  padding: 10px;
+  opacity: 0.7;
+  filter: alpha(opacity=40);
+}
+
+#aboutpic {
+  height: 175px;
+}
+
 .content input {
   text-align:center;}
 
@@ -72,4 +95,3 @@ a {
   border-top: rgba(0, 0, 0, 0.1) 1px solid;
   border-bottom: rgba(255, 255, 255, 0.2) 1px solid; 
 }
-

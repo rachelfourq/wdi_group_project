@@ -1,4 +1,6 @@
 class UploadsController < ApplicationController
+  before_action :current_user
+
   def index
   end
 
@@ -12,11 +14,15 @@ class UploadsController < ApplicationController
   	if (File.exists?(uploaded_path))
   		File.delete(uploaded_path)
   	end
-  	myUpload = Upload.create({
-  		:title => params[:upload][:title], 
-  		:cloud_id => cloud_file['public_id']
-  		})
-  	myUpload.save
+    user = User.find_or_create_by(id: @current_user.id)
+
+  	user.cloud_id = cloud_file['public_id']
+    user.save
+
+    @url = cloud_file['public_id']
+
+ 
+
   	redirect_to root_url
   end
 

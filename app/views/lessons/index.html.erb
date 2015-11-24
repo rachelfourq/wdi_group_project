@@ -1,7 +1,8 @@
-<%= @current_user.name %>
+<div class='row'>
 
+<div class="col l4 offset-l3">
 <%  @response.each do |video| %>
-<div class="container">
+<div>
   <h3><%= video.title %></h3> 
   <img src="<%= video.thumbnail_medium %>"/>
   <br />
@@ -13,8 +14,39 @@
       <%= f.submit class: 'btn btn-primary'%>
     <% end %>
   </p>
+  <a class="waves-effect waves-light btn modal-trigger" button data-target="modal1" href="#modal1">View Intro Video</a>
 
-  <p><%= link_to '+ Preview', lessons_path, class: 'btn btn-primary', id: 'add_btn' %></p>
+  <!-- Modal Structure -->
+  <div id="modal1">
+   <div class="modal-content">
+     <h4>Modal Header</h4>
+     <p><div class="video-container">
+<iframe width="1102" height="620" src="https://www.youtube.com/watch/<%= video.video_id %>" frameborder="0" allowfullscreen></iframe>
+</div></p>
+   </div>
+   <div class="modal-footer">
+     <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+   </div>
+  </div>
+<!-- <a href="https://www.youtube.com/embed/<%= video.video_id %>" class="fresco">Preview</a>
+</div>
+ -->
+  <!-- Modal Trigger -->
+  <button data-target="modal1" class="btn modal-trigger" id='modal-trigger'>Preview</button>
+</div>
 </div>
 
+
+   <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+
 <% end  %>
+

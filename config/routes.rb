@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'static_pages/about'
+
+  get 'static_pages/contact'
+
+  get 'friendships/create'
+
+  get 'friendships/destroy'
+
+  # post "friendships/create/"
+
   root 'main#index'
   
   get 'uploads/index'
@@ -12,6 +22,8 @@ Rails.application.routes.draw do
   get 'lessons/show'
 
   get 'search' => 'search#index'
+
+  get 'about' => 'static_pages#about'
 
 
   # get 'main/index'

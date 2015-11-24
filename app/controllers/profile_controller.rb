@@ -2,13 +2,13 @@ class ProfileController < ApplicationController
   before_action :current_user	
   def index	
   	@upload = Upload.new
-    @uploads = Upload.last(10).reverse
+    @uploads = Upload.last
   
     response = Lesson.all
 
     @response = []
-    response.each do |dumb|
-    	videoObject = VideoInfo.new("http://www.youtube.com/watch?v=" +  dumb.video_id.to_s)
+    response.each do |item|
+    	videoObject = VideoInfo.new("http://www.youtube.com/watch?v=" +  item.video_id.to_s)
     	@response << videoObject
     end
   
