@@ -70,7 +70,9 @@ class LessonsController < ApplicationController
         return videos
         
       rescue Google::APIClient::TransmissionError => e
+        puts "*****************"
         puts e.result.body
+        puts "*****************"
       end
     end
 
