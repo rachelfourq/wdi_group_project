@@ -25,7 +25,7 @@ By adding a sorting function, the user can quickly find their saved lessons. A t
 
 ##Known Bugs
 
-Searching by empty strings
+Searching by empty strings & 
 URL manipulation
 
 
