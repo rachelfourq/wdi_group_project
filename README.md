@@ -2,16 +2,16 @@
 "Your mind is a canvas"
 
 ##About
-With this app, users can organize Khan Academy lessons by type, tags, video duration, and theme, as well as a “Wire” feature that keeps track of progress and where you can enter in a specific amount of time you’d like to learn.
+With this app, users can search and organize Khan Academy, Coursera and various other online learning platforms lessons. The user can save these lessons to their "favorites" for quick reference all in one place! The user can search by type, tags, video duration, and theme, as well as a future “Wire” feature that keeps track of progress and where you can enter in a specific amount of time you’d like to learn.
 
 The intention for this app is to appeal to a younger and modern demographic and create something more creative, social, and to act as a simple goal-setting and educational resource.
 
 ###User Story Example
-Jake is interested in learning Math and Computer engineering. He wants to learn at a quick pace, but can’t find enough time and needs a timeline that helps keep him motivated and keep track of goals while fitting into his busy schedule. He also wants to be able to add his friends/family and share what he’s learned with them or suggest lessons.
+Jake is interested in learning Math and Computer engineering. He wants to learn at a quick pace, but can’t find enough time and needs a timeline that helps keep him motivated and keep track of goals while fitting into his busy schedule. 
 
 ##Technologies and Frameworks
 
-This app is built in the Rails framework and the primary languages are Ruby, SASS, HTML/CSS. Libraries include JQuery, Velocity.js, Cloudinary, Facebook oAuth, Materialize, and Foundation.
+This app is built in the Rails framework and the primary languages are Ruby, SASS, HTML/CSS. Libraries include JQuery and Materialize. APIs used include oAuth, Cloudinary and youtube.
 
 ##Future Features
 
