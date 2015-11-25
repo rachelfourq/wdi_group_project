@@ -17,9 +17,8 @@ class LessonsController < ApplicationController
     require 'google/api_client'
     require 'trollop'
 
+# this gets service for the youtube API to work ?
     def get_service
-
-
       client = Google::APIClient.new(
         :key => ENV['YOUTUBE_KEY'],
         :authorization => nil,
@@ -30,14 +29,22 @@ class LessonsController < ApplicationController
 
       return client, youtube
     end
-
-    qString = ' khan academy'  + params[:query].to_s 
-    qString2 = ' coursera ' + params[:query].to_s
-
     
+    search_string = params[:query].to_s
 
-    @response = searchFunction(qString)
-    # @anotherResponse = searchFunction(qString2)
+    if search_string.downcase == 'math' || 'science' || 'history'
+      qString = ' khan academy'  + search_string 
+      qString2 = ' coursera ' + search_string
+
+      @response = searchFunction(qString)
+      @anotherResponse = searchFunction(qString2)
+    elsif search_string.downcase == 'photography' || 'art'
+      qstring = 'creativelive ' + search_string
+      @response = searchFunction(qString)
+    else 
+      qstring = 'basics ' + search_string 
+      @response = searchFunction(qString)
+    end
   end
 
   def new
