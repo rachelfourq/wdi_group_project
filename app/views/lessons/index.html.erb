@@ -6,27 +6,22 @@
   <img src="<%= video.thumbnail_medium %>"/>
   <br />
 
-  
     <%= form_for :video, :url => {:action => "new"}, :html => {:method => "GET"} do |f| %>
       <%= f.hidden_field :id, :value => video.video_id %>
       <%= f.hidden_field :user_id, :value => @current_user.id %>
       <%= f.submit class: 'btn btn-primary'%>
     <% end %>
-  
 
   <!-- Modal Trigger -->
   <button data-target="modal1" class="btn modal-trigger" id='modal-trigger'>Preview</button>
-
 </div>
-
 
    <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
       <h4 class="grey-text"><%= video.title %></h4>
-      <iframe class="iframe" src="//www.youtube.com/embed/<%= video.video_id %>"></iframe>
+      <iframe class="iframe" src="//www.youtube.com/embed/<%= video.video_id %>" width='500' height='250'></iframe>
     </div>
-    <p class='black-text'><%= video.description %></p>
     <div class="modal-footer">
       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">close</a>
     </div>
