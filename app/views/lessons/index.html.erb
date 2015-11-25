@@ -2,8 +2,8 @@
 
 <%  @response.each do |video| %>
 <div class="card col l6 offset-l4">
-  <h3 class='black-text'><%= video.title %></h3> 
-  <img src="<%= video.thumbnail_medium %>"/>
+  <h4 class='black-text'><%= video.title %></h4> 
+  <img class='thumb_img' src="<%= video.thumbnail_large %>"/>
   <br />
 
     <%= form_for :video, :url => {:action => "new"}, :html => {:method => "GET"} do |f| %>
