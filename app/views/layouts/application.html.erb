@@ -78,6 +78,11 @@ $(document).ready(function(){
             </li>
             <li>
               <% if @current_user %>
+                <a href="/main"><span class="fa-stack fa-lg pull-left"><i class="fa fa-home fa-stack-1x "></i></span>Home</a>
+              <% end %>
+            </li>
+            <li>
+              <% if @current_user %>
                 <a href="/auth/logout"><span class="fa-stack fa-lg pull-left"><i class="fa fa-server fa-stack-1x "></i></span>Logout</a>
               <% end %>
             </li>
