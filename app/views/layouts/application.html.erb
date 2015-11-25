@@ -77,8 +77,13 @@ $(document).ready(function(){
               <% end %>
             </li>
             <li>
+              <% if @current_user %>            
+                <a href="/about"><span class="fa-stack fa-lg pull-left"><i class="fa fa-desktop fa-stack-1x "></i></span>About</a>
+              <% end %>  
+            </li>
+            <li>
               <% if @current_user %>
-                <a href="/main"><span class="fa-stack fa-lg pull-left"><i class="fa fa-home fa-stack-1x "></i></span>Home</a>
+                <a href="/main"><span class="fa-stack fa-lg pull-left"><i class="fa fa-search fa-stack-1x "></i></span>Search</a>
               <% end %>
             </li>
             <li>
