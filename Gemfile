@@ -50,6 +50,8 @@ gem 'google-api-client', '>0.7'
 
 gem 'video_info'
 
+gem 'rails_12factor', group: :production
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
