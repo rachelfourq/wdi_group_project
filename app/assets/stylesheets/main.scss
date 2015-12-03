@@ -14,7 +14,6 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   color: white;
-  font-weight: bold;
   -webkit-hyphens: auto;
      -moz-hyphens: auto;
       -ms-hyphens: auto;
@@ -33,6 +32,9 @@ h3 {
   font-size: 18px;
 }
 
+p {
+  font-size: 14px;
+}
 
 a {
   color: #fff;
@@ -84,8 +86,17 @@ a {
   height: 175px;
 }
 
+.logo {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
 .content input {
-  text-align:center;}
+  text-align:center;
+  padding-left: 10px;
+  margin-left:10px;
+  }
 
 .divider {
   display: block;
