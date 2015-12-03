@@ -36,7 +36,7 @@ $(document).ready(function(){
  
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active" ><button class="navbar-toggle collapse in" data-toggle="collapse" id="menu-toggle-2"> <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span></button></li>
+                <li class="active"><button class="navbar-toggle collapse in" data-toggle="collapse" id="menu-toggle-2"> <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span></button></li>
             </ul>
 </div>
    
@@ -47,7 +47,7 @@ $(document).ready(function(){
             <li>
             <div class='profilePic'>
             <% if @current_user %>
-                <%= cl_image_tag(@current_user.cloud_id, :width => 200, :height => 200, :crop =>'thumb') %>
+                <%= cl_image_tag(@current_user.cloud_id, :width => 150, :height => 150, :crop =>'thumb') %>
                 <% end %>
                 </div>
             </li>
