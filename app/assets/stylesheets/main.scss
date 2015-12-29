@@ -1,5 +1,5 @@
 body {
-  background-image:url("http://hayleenoellephotography.com/images/rachel_pageflip.gif");
+  background: url(splash.jpg);
   font-family: 'Karla', Arial, sans-serif;
   color: #fff;
   font-size: 100%;
@@ -45,6 +45,7 @@ a {
 .header-text {
   font-family:"Montserrat", Arial, sans-serif;
   font-size:40px;color:#FFFFFF;
+  width: 100%;
 }
 
 .secondary-text {
@@ -109,7 +110,11 @@ a {
 
 /* Toggle Styles */
 
-
+.navbar-toggle {
+  border: none;
+  background: none;
+  margin-left: 10px;
+}
 .profilePic {
   margin-left: 35px;
 }
@@ -143,7 +148,8 @@ a {
     transition: all 0.5s ease;
 }
 #wrapper.toggled #sidebar-wrapper {
-    width: 250px;
+    // width: 250px;
+    width: 50px;
 }
  
 #page-content-wrapper {
@@ -159,6 +165,11 @@ a {
     position: relative;
     margin-right: 0px; 
 }
+
+.fa-sort-amount-asc {
+  color: black;
+}
+
 .fixed-brand{
     width: auto;
 }
@@ -238,12 +249,12 @@ a {
         width: 250px;
     }
     #wrapper.toggled-2 #sidebar-wrapper {
-        width: 50px;
+        width: 0px;
     }
+
     #wrapper.toggled-2 #sidebar-wrapper:hover {
-        width: 250px;
+        width: -250px;
     }
- 
  
     #page-content-wrapper {
         padding: 20px;
