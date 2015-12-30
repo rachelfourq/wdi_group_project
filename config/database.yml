@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: wdi_group_project_production
+  database: brushupnow
   username: wdi_group_project
   password: <%= ENV['WDI_GROUP_PROJECT_DATABASE_PASSWORD'] %>
