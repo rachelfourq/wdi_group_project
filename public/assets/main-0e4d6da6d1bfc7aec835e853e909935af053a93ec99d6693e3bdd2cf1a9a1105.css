@@ -1,0 +1,346 @@
+/* line 1, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+body {
+  background: url(splash.jpg);
+  font-family: 'Karla', Arial, sans-serif;
+  color: #fff;
+  font-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+/* line 15, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+h1, h2, h3, h4, h5, h6 {
+  color: white;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+/* line 23, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+h1 {
+  font-size: 32px;
+}
+
+/* line 27, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+h2 {
+  font-size: 22px;
+}
+
+/* line 31, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+h3 {
+  font-size: 18px;
+}
+
+/* line 35, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+p {
+  font-size: 14px;
+}
+
+/* line 39, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* line 42, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+a:hover {
+  color: "black";
+}
+
+/* line 45, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+.header-text {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 40px;
+  color: #FFFFFF;
+  width: 100%;
+}
+
+/* line 51, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+.secondary-text {
+  font-family: "Karla", Arial, sans-serif;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+/* line 56, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+.container {
+  background-color: #000;
+  max-width: 650px;
+  padding-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  vertical-align: center;
+  text-align: center;
+  border-style: solid black;
+  padding: 10px;
+}
+
+/* line 69, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+.m_container {
+  background-color: #000;
+  max-width: 400px;
+  max-height: 750px;
+  padding-top: 0px;
+  margin-left: 250px;
+  float: left;
+  width: 33%;
+  margin-top: 0px;
+  vertical-align: center;
+  text-align: center;
+  border-style: 10px solid black;
+  padding: 10px;
+  opacity: 0.7;
+  filter: alpha(opacity=40);
+}
+
+/* line 86, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+#aboutpic {
+  height: 175px;
+}
+
+/* line 90, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+.logo {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+/* line 96, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+.content input {
+  text-align: center;
+  padding-left: 10px;
+  margin-left: 10px;
+}
+
+/* line 103, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+.divider {
+  display: block;
+  margin: 5px auto;
+  width: 50%;
+  height: 1px;
+  border-top: rgba(0, 0, 0, 0.1) 1px solid;
+  border-bottom: rgba(255, 255, 255, 0.2) 1px solid;
+}
+
+/* Toggle Styles */
+/* line 114, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+.navbar-toggle {
+  border: none;
+  background: none;
+  margin-left: 10px;
+}
+
+/* line 119, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+.profilePic {
+  margin-left: 35px;
+}
+
+/* line 123, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+/* line 132, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+#wrapper.toggled {
+  padding-left: 250px;
+  overflow: scroll;
+}
+
+/* line 137, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+#sidebar-wrapper {
+  z-index: 1000;
+  position: absolute;
+  left: 250px;
+  width: 0;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #000;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* line 151, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+#wrapper.toggled #sidebar-wrapper {
+  width: 50px;
+}
+
+/* line 155, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+#page-content-wrapper {
+  position: absolute;
+  padding: 15px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* line 161, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+.xyz {
+  min-width: 360px;
+}
+
+/* line 164, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+#wrapper.toggled #page-content-wrapper {
+  position: relative;
+  margin-right: 0px;
+}
+
+/* line 169, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+.fa-sort-amount-asc {
+  color: black;
+}
+
+/* line 173, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+.fixed-brand {
+  width: auto;
+}
+
+/* Sidebar Styles */
+/* line 178, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 2px;
+}
+
+/* line 188, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+.sidebar-nav li {
+  text-indent: 15px;
+  line-height: 40px;
+}
+
+/* line 193, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #999999;
+}
+
+/* line 199, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+.brush {
+  width: 200px;
+}
+
+/* line 203, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  border-left: red 2px solid;
+}
+
+/* line 210, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+/* line 215, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+}
+
+/* line 221, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+.sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+
+/* line 225, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+/* line 229, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+.no-margin {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  /* line 234, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+  #wrapper {
+    padding-left: 250px;
+  }
+
+  /* line 237, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+  .fixed-brand {
+    width: 250px;
+  }
+
+  /* line 240, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+  #wrapper.toggled {
+    padding-left: 0;
+  }
+
+  /* line 244, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+  #sidebar-wrapper {
+    width: 250px;
+  }
+
+  /* line 248, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+  #wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+  }
+
+  /* line 251, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+  #wrapper.toggled-2 #sidebar-wrapper {
+    width: 0px;
+  }
+
+  /* line 255, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+  #wrapper.toggled-2 #sidebar-wrapper:hover {
+    width: -250px;
+  }
+
+  /* line 259, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+  #page-content-wrapper {
+    padding: 20px;
+    position: relative;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+
+  /* line 268, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+  #wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+    padding-left: 250px;
+  }
+
+  /* line 273, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+  #wrapper.toggled-2 #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+    margin-left: -200px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    width: auto;
+  }
+
+  /* line 284, /Users/alexmac3/wdi_04/wdi_group_project/app/assets/stylesheets/main.scss */
+  input {
+    background: #26a69a;
+  }
+}
