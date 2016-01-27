@@ -102,8 +102,6 @@ class LessonsController < ApplicationController
       search_response.data.items.each do |search_result|
         case search_result.id.kind
           when 'youtube#video'
-            # titles << "#{search_result.snippet.title}"
-            # videos << "#{search_result.id.videoId}"
             videoObject = VideoInfo.new("http://www.youtube.com/watch?v=" + "#{search_result.id.videoId}")
             videos << videoObject
         end

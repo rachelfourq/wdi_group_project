@@ -1,57 +1,30 @@
-
 <div class='row'>
 
-<div class="col l4 offset-l3">
 <%  @response.each do |video| %>
-<div>
-  <h3><%= video.title %></h3> 
-  <img src="<%= video.thumbnail_medium %>"/>
+<div class="card col l6 offset-l4">
+  <h4 class='black-text'><%= video.title %></h4> 
+  <img class='thumb_img' src="<%= video.thumbnail_large %>"/>
   <br />
 
-  <p>
     <%= form_for :video, :url => {:action => "new"}, :html => {:method => "GET"} do |f| %>
       <%= f.hidden_field :id, :value => video.video_id %>
       <%= f.hidden_field :user_id, :value => @current_user.id %>
       <%= f.submit class: 'btn btn-primary'%>
     <% end %>
-  </p>
 
-
-
-  <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" button data-target="modal1" href="#modal1">View Intro Video</a>
-
-  <!-- Modal Structure -->
-  <div id="modal1">
-   <div class="modal-content">
-     <h4>Modal Header</h4>
-     <p><div class="video-container">
-<iframe width="1102" height="620" src="https://www.youtube.com/watch/<%= video.video_id %>" frameborder="0" allowfullscreen></iframe>
-</div></p>
-   </div>
-   <div class="modal-footer">
-     <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-   </div>
-  </div>
-
-
-<!-- <a href="https://www.youtube.com/embed/<%= video.video_id %>" class="fresco">
   <!-- Modal Trigger -->
   <button data-target="modal1" class="btn modal-trigger" id='modal-trigger'>Preview</button>
 </div>
-</div>
-
 
    <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
+      <h4 class="grey-text"><%= video.title %></h4>
+      <iframe class="iframe" src="//www.youtube.com/embed/<%= video.video_id %>" width='500' height='250'></iframe>
     </div>
     <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">close</a>
     </div>
   </div>
 
 <% end  %>
-
