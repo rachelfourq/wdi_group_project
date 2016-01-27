@@ -1,5 +1,5 @@
 body {
-  background: url(splash.jpg);
+  background: url(rachel_pageflip.gif);
   font-family: 'Karla', Arial, sans-serif;
   color: #fff;
   font-size: 100%;
@@ -38,13 +38,17 @@ p {
 
 a {
   color: #fff;
-  text-decoration: none; }
-  a:hover {
-    color: "black"; }
+  text-decoration: none; 
+}
+
+a:hover {
+  color: "black"; 
+}
 
 .header-text {
   font-family:"Montserrat", Arial, sans-serif;
-  font-size:40px;color:#FFFFFF;
+  font-size:40px;
+  color:#FFFFFF;
   width: 100%;
 }
 
@@ -116,11 +120,12 @@ a {
   background: none;
   margin-left: 10px;
 }
+
 .profilePic {
   margin-left: 35px;
 }
  
- #wrapper {
+#wrapper {
   padding-left: 0;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -158,9 +163,11 @@ a {
   width: 100%;  
   overflow-x: hidden; 
 }
+
 .xyz{
   min-width: 360px;
 }
+
 #wrapper.toggled #page-content-wrapper {
   position: relative;
   margin-right: 0px; 
@@ -234,9 +241,11 @@ a {
   #wrapper {
     padding-left: 250px;
   }
+
   .fixed-brand{
     width: 250px;
   }
+
   #wrapper.toggled {
     padding-left: 0;
   }
@@ -280,8 +289,8 @@ a {
     transition: all 0.5s ease;
     width: auto;
   }
+}
 
-   input {
-      background: #26a69a
-    }
+input {
+  background: #26a69a
 }
