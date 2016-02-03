@@ -8,8 +8,10 @@
 
     <%= form_for :video, :url => {:action => "new"}, :html => {:method => "GET"} do |f| %>
       <%= f.hidden_field :id, :value => video.video_id %>
-      <%= f.hidden_field :user_id, :value => @current_user.id %>
-      <%= f.submit class: 'btn btn-primary'%>
+      <% if @current_user %>
+        <%= f.hidden_field :user_id, :value => @current_user.id %>
+        <%= f.submit class: 'btn btn-primary'%>
+      <% end %>
     <% end %>
 
   <!-- Modal Trigger -->
