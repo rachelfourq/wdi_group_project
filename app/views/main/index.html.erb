@@ -1,16 +1,20 @@
 <div class="m_container">
   <div class="header-text">
-    <img class="brush" src="http://hayleenoellephotography.com/images/brushup_logo1.png" />
+    <!-- <img class="brush" src="http://hayleenoellephotography.com/images/brushup_logo1.png" /> -->
+    <h3>BrushUp</h3>
+    <hr/>
   </div>
 		<div class="header-text">
   		<h3>What would you like to learn today?</h3><br>
 		</div>
 
+    <!-- login button -->
   	<% if @current_user === nil%>
     	<%= link_to "Login with Facebook", "/auth/facebook", class: "btn btn-primary" %>
   	<% end %>
 
   	<br>
+    <!-- search -->
 		<%= form_tag(lessons_path, :method => "get", :url => "lessons_path", id: "search-form") do %><%= text_field_tag :query %>
 		<%= submit_tag "Search", class: 'search btn btn-primary' %>
 
